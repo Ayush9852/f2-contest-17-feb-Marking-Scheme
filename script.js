@@ -7,40 +7,44 @@ let arr = [
 ];
 
 function PrintStudentswithMap() {
-  //Write your code here , just console.log
-  let studentsOver50 = arr.filter(student => student.marks > 50);
-  studentsOver50.map(student => console.log(student));
+  // Using map to print students with marks over 50
+  arr.map(student => {
+    if (student.marks > 50) {
+      console.log(`Name: ${student.name}, Marks: ${student.marks}`);
+    }
+  });
 }
 
 function PrintStudentsbyForEach() {
-  //Write your code here , just console.log
+  // Using forEach to print students with marks over 50
   arr.forEach(student => {
-    if (student.marks > 50) {
-      console.log(student);
+    if(student.marks > 50){
+      console.log(student.name);
     }
   });
 }
 
 function addData() {
-  //Write your code here, just console.log
-  let newStudent = { id: 4, name: "susan", age: "20", marks: 45 };
+  // Adding a new student to the array and logging it
+  const newStudent = { id: 4, name: "susan", age: "20", marks: 45 };
   arr.push(newStudent);
   console.log(newStudent);
 }
 
 function removeFailedStudent() {
-  //Write your code here, just console.log
-  arr = arr.filter(student => student.marks >= 50);
-  console.log(arr);
+  // Filtering out failed students and logging the remaining ones
+  const passedStudents = arr.filter(student => student.marks >= 50);
+  console.log(passedStudents);
 }
 
 function concatenateArray() {
-  //Write your code here, just console.log
-  let additionalStudents = [
-    { id: 4, name: "susan", age: "20", marks: 45 },
-    { id: 5, name: "emma", age: "21", marks: 90 },
-    { id: 6, name: "mike", age: "22", marks: 75 }
+  // Creating another array with additional students and concatenating it with the existing one
+  const additionalStudents = [
+    { id: 4, name: "emma", age: "21", marks: 70 },
+    { id: 5, name: "peter", age: "22", marks: 65 },
+    { id: 6, name: "lisa", age: "20", marks: 55 }
   ];
-  arr = arr.concat(additionalStudents);
-  console.log(arr);
+
+  const concatenatedArray = arr.concat(additionalStudents);
+  console.log(concatenatedArray);
 }
